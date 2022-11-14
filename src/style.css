@@ -1,0 +1,29 @@
+* {
+    background-color: rgba(130, 210, 187, 0.53);
+    margin: 5px;
+
+
+}
+
+.toDos {
+    background-color: rgba(107, 224, 190, 0.53);
+    display: block;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+ul {
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+
+
+li:hover, button:hover {
+    background-color: rgba(80, 166, 141, 0.7);
+}
+
+checkbpx {
+    background-color: black;
+}
