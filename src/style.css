@@ -1,12 +1,16 @@
 * {
-    background-color: rgba(130, 210, 187, 0.53);
-    margin: 5px;
+    /*background-color: rgba(130, 210, 187, 0.53);*/
+
 
 
 }
 
+div {
+    margin: 5px;
+}
+
 .toDos {
-    background-color: rgba(107, 224, 190, 0.53);
+    background-color: rgba(73, 73, 73, 0.24);
     display: block;
     margin: 15px;
     border: 2px solid black;
@@ -16,15 +20,51 @@
 ul {
     border: 2px solid black;
     border-radius: 6px;
+    margin: 5px;
+}
+
+li {
+    margin: 5px;
 }
 
 
 
 li:hover, button:hover {
-    background-color: rgba(80, 166, 141, 0.7);
+    background-color: rgba(0, 0, 0, 0.45);
 
 }
 
 checkbpx {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+li:hover {
+    transition: 0.3s;
+    color: aliceblue;
+    border-radius: 10px;
+
+}
+
+input[type="checkbox" i] {
+    accent-color: #bb933e;
+    background-color: black !important;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    border-radius: 3px;
+}
+
+input[type="checkbox" i]:hover {
+    accent-color: aliceblue;
+}
+
+input {
+    background: rgba(0, 0, 0, 0.07);
+}
+button {
+    background: rgba(0, 0, 0, 0.13);
+    margin: 5px;
 }

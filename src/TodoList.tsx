@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
 import {FilterValuesType, TaskType} from "./App";
 import './style.css'
 
 type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
-    removeTasks: (taskId: number)=>void
+    removeTasks: (taskId: string)=>void
     changeTodoListFilter: (nextFilterValue: FilterValuesType) => void
-
+    addTask: (title:string)=>void
 }
 
 
-const TodoList = (props: TodoListPropsType,) => {
+const TodoList = (props: TodoListPropsType) => {
+    const [title, setTitle] = useState<string>('')
+
     const tasksElements = props.tasks.map((task: TaskType) => {
         return (
             <li key={task.id}>
@@ -22,13 +24,25 @@ const TodoList = (props: TodoListPropsType,) => {
         )
     })
 
+    const setLocalTitle = (e: ChangeEvent<HTMLInputElement>)=>setTitle(e.currentTarget.value)
+    const setOnKey = (e: KeyboardEvent<HTMLInputElement>)=>{
+        if(e.key === 'Enter') {
+            props.addTask(title)
+        }
+    }
+
     return (
         <div>
             <div className={"toDos"}>
                 <h3>{props.title}</h3>
                 <div>
-                    <input/>
-                    <button>+</button>
+                    <input value={title}
+                           onKeyDown={setOnKey}
+                           onChange={setLocalTitle}/>
+                    <button onClick={()=> {
+                        props.addTask(title)
+                        setTitle('')
+                    }}>+</button>
                 </div>
                 <ul className={"Ul"}>
                     {tasksElements}
